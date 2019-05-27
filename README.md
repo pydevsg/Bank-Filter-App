@@ -1,5 +1,5 @@
 # Bank-Filter-App
-> A single page web application to search and list all the banks around multiple cities in India__ 
+> __A single page web application to search and list all the banks around multiple cities in India__ 
 
 ## Prerequisite
 > create-react-app filter-app
