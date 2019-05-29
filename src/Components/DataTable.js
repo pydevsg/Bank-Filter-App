@@ -1,5 +1,6 @@
 import React from "react";
 import Dropdown from "./Dropdown";
+import AutoCompleteText from "./AutoCompleteText";
 class DataTable extends React.Component {
   constructor(props) {
     super(props);
@@ -32,15 +33,15 @@ class DataTable extends React.Component {
       return <div>Error: {error.message}</div>;
     } else if (!isLoaded) {
       return (
-        <div>
-          <h1>BANK DETAILS FILTER APPLICATION</h1>
-          <Dropdown />
-          <br />
           <p>Loading...</p>
-        </div>
       );
     } else {
       return (
+        <div>
+          <h1>BANK DETAILS FILTER APPLICATION</h1>
+          <Dropdown />
+          <AutoCompleteText />
+          <br />
         <table>
           <thead>
             <tr>
@@ -67,6 +68,7 @@ class DataTable extends React.Component {
             ))}
           </tbody>
         </table>
+      </div>
       );
     }
   }
