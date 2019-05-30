@@ -1,5 +1,6 @@
 import React from "react";
 import "./AutoCompleteText.css";
+import bank from "../bank";
 class AutoCompleteText extends React.Component {
   constructor(props) {
     super(props);
@@ -9,12 +10,12 @@ class AutoCompleteText extends React.Component {
     };
   }
   onTextChanged = e => {
-    const { items } = this.props;
+    const { items } = this.props.bank;
     const value = e.target.value;
     let suggestions = [];
     if (value.length > 0) {
       const regex = new RegExp(`${value}`, `i`);
-      suggestions = items.sort().filter(v => regex.test(v));
+      suggestions = this.items.sort().filter(v => regex.test(v));
     }
     this.setState(() => ({ suggestions, text: value }));
   };
