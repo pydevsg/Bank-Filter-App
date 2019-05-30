@@ -1,0 +1,19 @@
+.bd {
+  border-collapse: collapse;
+  table-layout: fixed;
+  width: 100%;
+  border: 1px solid black;
+}
+h1 {
+  color: blue;
+  background-color: aquamarine;
+}
+thead,
+th,
+tr,
+td {
+  border-collapse: collapse;
+  table-layout: fixed;
+  width: 100%;
+  border: 1px solid black;
+}
