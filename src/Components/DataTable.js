@@ -1,7 +1,7 @@
 import React from "react";
 import Dropdown from "./Dropdown";
 import AutoCompleteText from "./AutoCompleteText";
-import "./DataTable.css";
+import "./Datatable.css";
 class DataTable extends React.Component {
   constructor(props) {
     super(props);
