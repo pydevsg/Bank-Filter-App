@@ -1,6 +1,7 @@
 import React from "react";
 import Dropdown from "./Dropdown";
 import AutoCompleteText from "./AutoCompleteText";
+import "./DataTable.css";
 class DataTable extends React.Component {
   constructor(props) {
     super(props);
@@ -32,43 +33,40 @@ class DataTable extends React.Component {
     if (error) {
       return <div>Error: {error.message}</div>;
     } else if (!isLoaded) {
-      return (
-          <p>Loading...</p>
-      );
+      return <p>Loading...</p>;
     } else {
       return (
         <div>
           <h1>BANK DETAILS FILTER APPLICATION</h1>
           <Dropdown />
           <AutoCompleteText />
-          <br />
-        <table>
-          <thead>
-            <tr>
-              <th>Bank IFSC</th>
-              <th>Bank Name</th>
-              <th>Bank ID</th>
-              <th>Bank Branch</th>
-              <th>Address</th>
-              <th>City</th>
-              <th>State</th>
-            </tr>
-          </thead>
-          <tbody>
-            {banks.map(bank => (
+          <table class="bd">
+            <thead>
               <tr>
-                <td>{bank.ifsc}</td>
-                <td>{bank.bank_name}</td>
-                <td>{bank.bank_id}</td>
-                <td>{bank.branch}</td>
-                <td>{bank.address}</td>
-                <td>{bank.city}</td>
-                <td>{bank.state}</td>
+                <th>Bank IFSC</th>
+                <th>Bank Name</th>
+                <th>Bank ID</th>
+                <th>Bank Branch</th>
+                <th>Address</th>
+                <th>City</th>
+                <th>State</th>
               </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
+            </thead>
+            <tbody>
+              {banks.map(bank => (
+                <tr>
+                  <td>{bank.ifsc}</td>
+                  <td>{bank.bank_name}</td>
+                  <td>{bank.bank_id}</td>
+                  <td>{bank.branch}</td>
+                  <td>{bank.address}</td>
+                  <td>{bank.city}</td>
+                  <td>{bank.state}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
       );
     }
   }
