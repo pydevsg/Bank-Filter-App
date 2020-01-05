@@ -6,7 +6,7 @@ class Dropdown extends React.Component {
 
     this.state = {
       banks: [],
-      ct: ["BANGALORE", "CHENNAI", "DELHI", "KOLKATA", "MUMBAI"],
+      ct: ["BANGALORE", "CHENNAI", "DELHI", "KOLKATA", "MUMBAI", "PATNA"],
       displayMenu: false
     };
     this.fetchData = this.fetchData.bind(this);
@@ -122,6 +122,15 @@ class Dropdown extends React.Component {
                 href="https://vast-shore-74260.herokuapp.com/banks?city=MUMBAI"
               >
                 MUMBAI
+              </a>
+              {/*<button onClick={this.fetchData()}>{this.state.ct[4]}</button>*/}
+            </li>
+            <li>
+              <a
+                className="active"
+                href="https://vast-shore-74260.herokuapp.com/banks?city=PATNA"
+              >
+                PATNA
               </a>
               {/*<button onClick={this.fetchData()}>{this.state.ct[4]}</button>*/}
             </li>

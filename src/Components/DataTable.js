@@ -13,9 +13,9 @@ class DataTable extends React.Component {
   }
 
   componentDidMount() {
-    let ct = ["BANGALORE", "CHENNAI", "DELHI", "KOLKATA", "MUMBAI"];
+    let ct = ["BANGALORE", "CHENNAI", "DELHI", "KOLKATA", "MUMBAI", "PATNA"];
     let url = "https://vast-shore-74260.herokuapp.com/banks?city=";
-    for (let i = 0; i < 5; i++) {
+    for (let i = 0; i < 6; i++) {
       let curl = url + ct[i];
       fetch(curl)
         .then(res => res.json())
