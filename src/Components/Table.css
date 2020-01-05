@@ -1,0 +1,33 @@
+/*Search box*/
+.search{
+    position: relative;
+    height:10%;
+    width:40%;
+    font-size: 20px;
+    padding-left: 5%;
+    padding-top: 0.5%;
+    padding-bottom: 0.5%;
+    padding-right: 5%;
+    margin-top:0.5%;
+    margin-bottom:0.5%;
+  }
+  ul{
+    list-style-type:none;
+    margin:0;
+    padding:0;
+  }
+  li{
+    padding:1% 1% 1% 1%;
+    background-color: red;
+    border-bottom:1px solid white;
+    color:white;
+  }
+  li:hover{
+    cursor:hand;
+  }
+  #main-menu{
+    font-weight:1000;
+  }
+  #main-menu:hover .dropdown{
+    display: block;
+  }
