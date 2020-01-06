@@ -1,15 +1,17 @@
 import React from "react";
 import "./styles.css";
+import Table from './Table'
+import { isCompositeComponentWithType } from "react-dom/test-utils";
 class Dropdown extends React.Component {
   constructor() {
     super();
 
     this.state = {
-      banks: [],
-      ct: ["BANGALORE", "CHENNAI", "DELHI", "KOLKATA", "MUMBAI"],
+      selected_menu:"",
+      ct: ["BANGALORE", "CHENNAI", "DELHI", "KOLKATA", "MUMBAI", "PATNA", "INDORE"],
       displayMenu: false
+
     };
-    this.fetchData = this.fetchData.bind(this);
     this.showDropdownMenu = this.showDropdownMenu.bind(this);
     this.hideDropdownMenu = this.hideDropdownMenu.bind(this);
   }
@@ -27,53 +29,11 @@ class Dropdown extends React.Component {
     });
   }
 
-  componentDidMount() {
-    this.fetchData();
-  }
-  fetchData() {
-    let { city } = this.state.ct;
-    let base_url = "https://vast-shore-74260.herokuapp.com/banks?city=";
-    let fc = base_url + city;
-    fetch(fc)
-      .then(res => res.json())
-      .then(json => {
-        this.setState({
-          isLoaded: true,
-          banks: json
-        });
-      });
-    return (
-      <table>
-        <thead>
-          <tr>
-            <th>Bank IFSC</th>
-            <th>Bank Name</th>
-            <th>Bank ID</th>
-            <th>Bank Branch</th>
-            <th>Address</th>
-            <th>City</th>
-            <th>State</th>
-          </tr>
-        </thead>
-        <tbody>
-          {this.state.banks.map(bank => (
-            <tr>
-              <td>{bank.ifsc}</td>
-              <td>{bank.bank_name}</td>
-              <td>{bank.bank_id}</td>
-              <td>{bank.branch}</td>
-              <td>{bank.address}</td>
-              <td>{bank.city}</td>
-              <td>{bank.state}</td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
-    );
-  }
   render() {
     return (
+      <div>
       <div className="dropdown" style={{ background: "red", width: "200px" }}>
+        
         <div className="button" onClick={this.showDropdownMenu}>
           {" "}
           Cities{" "}
@@ -87,7 +47,7 @@ class Dropdown extends React.Component {
               >
                 BANGALORE
               </a>
-              {/*<button onClick={this.fetchData()}>{this.state.ct[0]}</button>*/}
+              <button onClick={this.setState({selected_menu:"BANGLORE"})}>BANGALORE</button>
             </li>
             <li>
               <a
@@ -96,7 +56,7 @@ class Dropdown extends React.Component {
               >
                 CHENNAI
               </a>
-              {/*<button onClick={this.fetchData()}>{this.state.ct[1]}</button>*/}
+              <button onClick={this.setState({selected_menu:"CHENNAI"})}>CHENNAI</button>
             </li>
             <li>
               <a
@@ -105,7 +65,7 @@ class Dropdown extends React.Component {
               >
                 DELHI
               </a>
-              {/*<button onClick={this.fetchData()}>{this.state.ct[2]}</button>*/}
+              <button onClick={this.setState({selected_menu:"DELHI"})}>DELHI</button>
             </li>
             <li>
               <a
@@ -114,7 +74,7 @@ class Dropdown extends React.Component {
               >
                 KOLKATA
               </a>
-              {/*<button onClick={this.fetchData()}>{this.state.ct[3]}</button>*/}
+              <button onClick={this.setState({selected_menu:"KOLKATA"})}>KOLKATA</button>
             </li>
             <li>
               <a
@@ -123,10 +83,30 @@ class Dropdown extends React.Component {
               >
                 MUMBAI
               </a>
-              {/*<button onClick={this.fetchData()}>{this.state.ct[4]}</button>*/}
+              <button onClick={this.setState({selected_menu:"MUMBAI"})}>MUMBAI</button>
+            </li>
+            <li>
+              <a
+                className="active"
+                href="https://vast-shore-74260.herokuapp.com/banks?city=PATNA"
+              >
+                MUMBAI
+              </a>
+              <button onClick={this.setState({selected_menu:"PATNA"})}>PATNA</button>
+            </li>
+            <li>
+              <a
+                className="active"
+                href="https://vast-shore-74260.herokuapp.com/banks?city=INDORE"
+              >
+                MUMBAI
+              </a>
+              <button onClick={this.setState({selected_menu:"INDORE"})}>INDORE</button>
             </li>
           </ul>
         ) : null}
+      </div>
+
       </div>
     );
   }
