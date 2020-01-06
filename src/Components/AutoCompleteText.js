@@ -1,6 +1,5 @@
 import React from "react";
 import "./AutoCompleteText.css";
-import bank from "../bank";
 class AutoCompleteText extends React.Component {
   constructor(props) {
     super(props);
