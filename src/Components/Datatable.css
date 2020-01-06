@@ -4,9 +4,18 @@
   width: 100%;
   border: 1px solid black;
 }
-h1 {
-  color: blue;
-  background-color: aquamarine;
+.header{
+  position:relative;
+  width:100%;
+  height:30%;
+  padding:1% 3% 1% 3%;
+  text-align: center;
+  color:white;
+  margin:auto;
+  display:block;
+  top:0;
+  font-family: Arial, Helvetica, sans-serif;
+  background-image:linear-gradient(to left,white,red);
 }
 thead,
 th,
@@ -16,4 +25,108 @@ td {
   table-layout: fixed;
   width: 100%;
   border: 1px solid black;
+}
+
+/*Loading Icon*/
+.loader,
+.loader:before,
+.loader:after {
+  background: #ff0000;
+  -webkit-animation: load1 1s infinite ease-in-out;
+  animation: load1 1s infinite ease-in-out;
+  width: 1em;
+  height: 4em;
+}
+.wait{
+  color:red;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.loader {
+  color: #ff0000;
+  text-indent: -9999em;
+  margin: 88px auto;
+  position: relative;
+  font-size: 11px;
+  -webkit-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-animation-delay: -0.16s;
+  animation-delay: -0.16s;
+}
+.loader:before,
+.loader:after {
+  position: absolute;
+  top: 0;
+  content: '';
+}
+.loader:before {
+  left: -1.5em;
+  -webkit-animation-delay: -0.32s;
+  animation-delay: -0.32s;
+}
+.loader:after {
+  left: 1.5em;
+}
+@-webkit-keyframes load1 {
+  0%,
+  80%,
+  100% {
+    box-shadow: 0 0;
+    height: 4em;
+  }
+  40% {
+    box-shadow: 0 -2em;
+    height: 5em;
+  }
+}
+@keyframes load1 {
+  0%,
+  80%,
+  100% {
+    box-shadow: 0 0;
+    height: 4em;
+  }
+  40% {
+    box-shadow: 0 -2em;
+    height: 5em;
+  }
+}
+.load{
+  margin-top:1%;
+  margin-bottom: 1%;
+  padding:1% 2% 1% 2%;
+  background-color: red;
+  border: 0;
+  color:white;
+  font-style:bold;
+}
+.load:hover{
+  cursor:hand;
+}
+/*Search box*/
+
+
+
+
+
+
+ul{
+  list-style-type:none;
+  margin:0;
+  padding:0;
+}
+li{
+  padding:1% 1% 1% 1%;
+  background-color: red;
+  border-bottom:1px solid white;
+  color:white;
+}
+li:hover{
+  cursor:hand;
+}
+#main-menu{
+  font-weight:1000;
+}
+#main-menu:hover .dropdown{
+  display: block;
 }
