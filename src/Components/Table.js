@@ -10,6 +10,7 @@ class Table extends React.Component {
       error: null,
       isLoaded: false,
       displayAll:false,
+      limit:20,
       banks: [],
       search:"",
       search_limit:20,
@@ -53,7 +54,12 @@ class Table extends React.Component {
         menu:this.props.menu
       })
   }
-
+  //Load More Pagination 20 Items at a time
+  load(){
+    this.setState({
+      limit:this.state.limit+20
+    })
+  }
   //Search by Bank Name, City, State
   Search(e){
     this.setState({
@@ -121,7 +127,7 @@ class Table extends React.Component {
               {
                 banks.filter(bank =>{
                   return bank.bank_name.indexOf(search) >=0 
-                }).map(bank => (
+                }).slice(0,this.state.limit).map(bank => (
                   <tr>
                     <td>{bank.ifsc}</td>
                     <td>{bank.bank_name}</td>
@@ -135,7 +141,7 @@ class Table extends React.Component {
               }
             </tbody>
             </table>
-          
+          <center><button class="load" onClick={()=> this.load()}>Load More</button></center>
           </div>
       );
     }
