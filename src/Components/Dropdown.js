@@ -8,7 +8,7 @@ class Dropdown extends React.Component {
 
     this.state = {
       selected_menu:"",
-      ct: ["BANGALORE", "CHENNAI", "DELHI", "KOLKATA", "MUMBAI", "PATNA", "INDORE"],
+      ct: ["BANGALORE", "CHENNAI", "DELHI", "KOLKATA", "MUMBAI", "PATNA", "INDORE", "PUNE", "HYDERABAD"],
       displayMenu: false
 
     };
@@ -47,7 +47,6 @@ class Dropdown extends React.Component {
               >
                 BANGALORE
               </a>
-              <button onClick={this.setState({selected_menu:"BANGLORE"})}>BANGALORE</button>
             </li>
             <li>
               <a
@@ -65,7 +64,7 @@ class Dropdown extends React.Component {
               >
                 DELHI
               </a>
-              <button onClick={this.setState({selected_menu:"DELHI"})}>DELHI</button>
+              {/*<button onClick={this.fetchData()}>{this.state.ct[2]}</button>*/}
             </li>
             <li>
               <a
@@ -74,7 +73,7 @@ class Dropdown extends React.Component {
               >
                 KOLKATA
               </a>
-              <button onClick={this.setState({selected_menu:"KOLKATA"})}>KOLKATA</button>
+              {/*<button onClick={this.fetchData()}>{this.state.ct[3]}</button>*/}
             </li>
             <li>
               <a
@@ -83,26 +82,46 @@ class Dropdown extends React.Component {
               >
                 MUMBAI
               </a>
-              <button onClick={this.setState({selected_menu:"MUMBAI"})}>MUMBAI</button>
+              {/*<button onClick={this.fetchData()}>{this.state.ct[4]}</button>*/}
             </li>
-            <li>
+            < li >
+              <a
+            className = "active"
+            href = "https://vast-shore-74260.herokuapp.com/banks?city=MUMBAI" >
+              MUMBAI </a> {/*<button onClick={this.fetchData()}>{this.state.ct[4]}</button>*/ }
+                </li>
+              <li>
+                <a
+              className = "active"
+              href = "https://vast-shore-74260.herokuapp.com/banks?city=MUMBAI" >
+                MUMBAI </a> {
+                  /*<button onClick={this.fetchData()}>{this.state.ct[4]}</button>*/ } </li>
+                < li >
+                  <a
+                className = "active"
+                href = "https://vast-shore-74260.herokuapp.com/banks?city=MUMBAI" >
+                  MUMBAI 
+                  </a> {
+                    /*<button onClick={this.fetchData()}>{this.state.ct[4]}</button>*/ } 
+                  < /li>
+                  <li>
               <a
                 className="active"
-                href="https://vast-shore-74260.herokuapp.com/banks?city=PATNA"
+                href="https://vast-shore-74260.herokuapp.com/banks?city=MUMBAI"
               >
                 MUMBAI
               </a>
-              <button onClick={this.setState({selected_menu:"PATNA"})}>PATNA</button>
+              {/*<button onClick={this.fetchData()}>{this.state.ct[4]}</button>*/}
             </li>
-            <li>
-              <a
-                className="active"
-                href="https://vast-shore-74260.herokuapp.com/banks?city=INDORE"
-              >
-                MUMBAI
-              </a>
-              <button onClick={this.setState({selected_menu:"INDORE"})}>INDORE</button>
-            </li>
+            < li >
+              <
+              a
+            className = "active"
+            href = "https://vast-shore-74260.herokuapp.com/banks?city=MUMBAI" >
+              MUMBAI <
+              /a> {
+                /*<button onClick={this.fetchData()}>{this.state.ct[4]}</button>*/ } <
+              /li>
           </ul>
         ) : null}
       </div>
