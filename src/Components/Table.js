@@ -39,7 +39,7 @@ class Table extends React.Component {
   componentDidMount() {
     let ct = ["BANGALORE", "CHENNAI", "DELHI", "KOLKATA", "MUMBAI", "PATNA", "INDORE", "PUNE", "HYDERABAD"];
     let url = "https://vast-shore-74260.herokuapp.com/banks?city=";
-      for (let i = 0; i < 5; i++) {
+      for (let i = 0; i < 9; i++) {
         let curl = url + ct[i];
         fetch(curl)
           .then(res => res.json())
@@ -107,6 +107,7 @@ class Table extends React.Component {
                 <li onClick={()=>this.selectMenu("KOLKATA")}>KOLKATA</li>
                 <li onClick={()=>this.selectMenu("MUMBAI")}>MUMBAI</li>
                 <li onClick={()=>this.selectMenu("PATNA")}>PATNA</li>
+                <li onClick={()=>this.selectMenu("INDORE")}>INDORE</li>
                 <li onClick={()=>this.selectMenu("PUNE")}>PUNE</li>
                 <li onClick={()=>this.selectMenu("HYDERABAD")}>HYDERABAD</li>
               </ul>)
