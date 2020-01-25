@@ -10,6 +10,7 @@ class Table extends React.Component {
       error: null,
       isLoaded: false,
       displayAll:false,
+      limit:20,
       banks: [],
       search:"",
       search_limit:20,
@@ -36,9 +37,9 @@ class Table extends React.Component {
   }
   //Data update
   componentDidMount() {
-    let ct = ["BANGALORE", "CHENNAI", "DELHI", "KOLKATA", "MUMBAI", "PATNA", "INDORE"];
+    let ct = ["BANGALORE", "CHENNAI", "DELHI", "KOLKATA", "MUMBAI"];
     let url = "https://vast-shore-74260.herokuapp.com/banks?city=";
-      for (let i = 0; i < 7; i++) {
+      for (let i = 0; i < 5; i++) {
         let curl = url + ct[i];
         fetch(curl)
           .then(res => res.json())
@@ -53,7 +54,12 @@ class Table extends React.Component {
         menu:this.props.menu
       })
   }
-
+  //Load More Pagination 20 Items at a time
+  load(){
+    this.setState({
+      limit:this.state.limit+20
+    })
+  }
   //Search by Bank Name, City, State
   Search(e){
     this.setState({
@@ -90,18 +96,23 @@ class Table extends React.Component {
 
       return (
         <div>
+          
           {/*Drop Down */}
           <ul class='menu'>
-        <li id='main-menu' onClick={this.show_dropdown}>{this.state.selected_menu}</li>
+          
+        <li id='main-menu' onClick={this.show_dropdown}><div class="menu-icon">
+            <div class="bar1"></div>
+            <div class="bar2"></div>
+            <div class="bar3"></div>
+        </div>{this.state.selected_menu}</li>
           {this.state.show_menu?
               (<ul class='dropdown'>
-                <li onClick={()=>this.selectMenu("BANGALORE")}>BANGALORE</li>
-                <li onClick={()=>this.selectMenu("CHENNAI")}>CHENNAI</li>
-                <li onClick={()=>this.selectMenu("DELHI")}>DELHI</li>
-                <li onClick={()=>this.selectMenu("KOLKATA")}>KOLKATA</li>
-                <li onClick={()=>this.selectMenu("MUMBAI")}>MUMBAI</li>
-                <li onClick={()=>this.selectMenu("PATNA")}>PATNA</li>
-                <li onClick={()=>this.selectMenu("INDORE")}>INDORE</li>
+                
+                <li onClick={()=>this.selectMenu("BANGALORE")}>>> BANGALORE</li>
+                <li onClick={()=>this.selectMenu("CHENNAI")}>>> CHENNAI</li>
+                <li onClick={()=>this.selectMenu("DELHI")}>>> DELHI</li>
+                <li onClick={()=>this.selectMenu("KOLKATA")}>>> KOLKATA</li>
+                <li onClick={()=>this.selectMenu("MUMBAI")}>>> MUMBAI</li>
               </ul>)
               :(null)}
           </ul>
