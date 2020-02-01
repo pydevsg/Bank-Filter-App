@@ -90,7 +90,7 @@ class Dropdown extends React.Component {
                 className="active"
                 href="https://vast-shore-74260.herokuapp.com/banks?city=PATNA"
               >
-                MUMBAI
+                PATNA
               </a>
               <button onClick={this.setState({selected_menu:"PATNA"})}>PATNA</button>
             </li>
@@ -99,7 +99,7 @@ class Dropdown extends React.Component {
                 className="active"
                 href="https://vast-shore-74260.herokuapp.com/banks?city=INDORE"
               >
-                MUMBAI
+                INDORE
               </a>
               <button onClick={this.setState({selected_menu:"INDORE"})}>INDORE</button>
             </li>
