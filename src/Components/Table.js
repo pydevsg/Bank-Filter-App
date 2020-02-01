@@ -134,7 +134,7 @@ class Table extends React.Component {
             <tbody>
               {
                 banks.filter(bank =>{
-                  return bank.bank_name.indexOf(search) >=0 
+                  return bank.bank_name.indexOf(search) >=0 || bank.branch.indexOf(search) >=0 
                 }).slice(0,this.state.limit).map(bank => (
                   <tr>
                     <td>{bank.ifsc}</td>
