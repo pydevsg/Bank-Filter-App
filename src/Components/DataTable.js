@@ -18,7 +18,7 @@ Pop(){
     
       return (
         <div>
-          <div class="header"><h1>BANK DETAILS FILTER APPLICATION</h1></div>
+          <div class="header"></div>
           
 
           
