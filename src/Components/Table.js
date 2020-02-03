@@ -10,9 +10,9 @@ class Table extends React.Component {
       error: null,
       isLoaded: false,
       displayAll:false,
-      limit:20,
       banks: [],
       search:"",
+      limit:20,
       search_limit:20,
       visibility:false,
       show_menu:false,
@@ -37,9 +37,9 @@ class Table extends React.Component {
   }
   //Data update
   componentDidMount() {
-    let ct = ["BANGALORE", "CHENNAI", "DELHI", "KOLKATA", "MUMBAI", "PATNA", "INDORE", "PUNE", "HYDERABAD"];
+    let ct = ["BANGALORE", "CHENNAI", "DELHI", "KOLKATA", "MUMBAI", "PATNA", "INDORE"];
     let url = "https://vast-shore-74260.herokuapp.com/banks?city=";
-      for (let i = 0; i < 9; i++) {
+      for (let i = 0; i < 7; i++) {
         let curl = url + ct[i];
         fetch(curl)
           .then(res => res.json())
@@ -54,7 +54,7 @@ class Table extends React.Component {
         menu:this.props.menu
       })
   }
-  //Load More Pagination 20 Items at a time
+  //Load More
   load(){
     this.setState({
       limit:this.state.limit+20
@@ -98,18 +98,22 @@ class Table extends React.Component {
         <div>
           {/*Drop Down */}
           <ul class='menu'>
-        <li id='main-menu' onClick={this.show_dropdown}>{this.state.selected_menu}</li>
+        <li id='main-menu' onClick={this.show_dropdown}>{this.state.selected_menu}
+        <div class="menu-icon">
+            <div class="bar1"></div>
+            <div class="bar2"></div>
+            <div class="bar3"></div>
+        </div>
+        </li>
           {this.state.show_menu?
               (<ul class='dropdown'>
-                <li onClick={()=>this.selectMenu("BANGALORE")}>BANGALORE</li>
-                <li onClick={()=>this.selectMenu("CHENNAI")}>CHENNAI</li>
-                <li onClick={()=>this.selectMenu("DELHI")}>DELHI</li>
-                <li onClick={()=>this.selectMenu("KOLKATA")}>KOLKATA</li>
-                <li onClick={()=>this.selectMenu("MUMBAI")}>MUMBAI</li>
-                <li onClick={()=>this.selectMenu("PATNA")}>PATNA</li>
-                <li onClick={()=>this.selectMenu("INDORE")}>INDORE</li>
-                <li onClick={()=>this.selectMenu("PUNE")}>PUNE</li>
-                <li onClick={()=>this.selectMenu("HYDERABAD")}>HYDERABAD</li>
+                <li onClick={()=>this.selectMenu("BANGALORE")}>>>BANGALORE</li>
+                <li onClick={()=>this.selectMenu("CHENNAI")}>>>CHENNAI</li>
+                <li onClick={()=>this.selectMenu("DELHI")}>>>DELHI</li>
+                <li onClick={()=>this.selectMenu("KOLKATA")}>>>KOLKATA</li>
+                <li onClick={()=>this.selectMenu("MUMBAI")}>>>MUMBAI</li>
+                <li onClick={()=>this.selectMenu("PATNA")}>>>PATNA</li>
+                <li onClick={()=>this.selectMenu("INDORE")}>>>INDORE</li>
               </ul>)
               :(null)}
           </ul>
@@ -130,7 +134,7 @@ class Table extends React.Component {
             <tbody>
               {
                 banks.filter(bank =>{
-                  return bank.bank_name.indexOf(search) >=0 
+                  return bank.bank_name.indexOf(search) >=0 || bank.branch.indexOf(search) >=0 
                 }).slice(0,this.state.limit).map(bank => (
                   <tr>
                     <td>{bank.ifsc}</td>
@@ -145,7 +149,7 @@ class Table extends React.Component {
               }
             </tbody>
             </table>
-          <center><button class="load" onClick={()=> this.load()}>Load More</button></center>
+            <center><button class="load" onClick={()=> this.load()}>Load More</button></center>
           </div>
       );
     }
