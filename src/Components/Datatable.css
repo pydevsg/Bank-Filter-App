@@ -12,6 +12,7 @@ body{
   width:100%;
   height:100px;
   background-image: url('../img/head.jpg');
+  background-repeat: no-repeat;
 }
 thead,
 th,
