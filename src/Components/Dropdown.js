@@ -1,7 +1,5 @@
 import React from "react";
 import "./styles.css";
-import Table from './Table'
-import { isCompositeComponentWithType } from "react-dom/test-utils";
 class Dropdown extends React.Component {
   constructor() {
     super();

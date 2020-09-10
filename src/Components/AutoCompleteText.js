@@ -9,7 +9,6 @@ class AutoCompleteText extends React.Component {
     };
   }
   onTextChanged = e => {
-    const { items } = this.props.bank;
     const value = e.target.value;
     let suggestions = [];
     if (value.length > 0) {

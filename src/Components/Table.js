@@ -1,6 +1,4 @@
 import React from "react";
-import Dropdown from "./Dropdown";
-import AutoCompleteText from "./AutoCompleteText";
 import "./Table.css";
 
 class Table extends React.Component {
@@ -39,7 +37,7 @@ class Table extends React.Component {
   componentDidMount() {
     let ct = ["BANGALORE", "CHENNAI", "DELHI", "KOLKATA", "MUMBAI", "PATNA", "INDORE"];
     let url = "https://vast-shore-74260.herokuapp.com/banks?city=";
-      for (let i = 0; i < 7; i++) {
+      for (let i = 0; i < ct.length; i++) {
         let curl = url + ct[i];
         fetch(curl)
           .then(res => res.json())
@@ -107,13 +105,13 @@ class Table extends React.Component {
         </li>
           {this.state.show_menu?
               (<ul class='dropdown'>
-                <li onClick={()=>this.selectMenu("BANGALORE")}>>>BANGALORE</li>
-                <li onClick={()=>this.selectMenu("CHENNAI")}>>>CHENNAI</li>
-                <li onClick={()=>this.selectMenu("DELHI")}>>>DELHI</li>
-                <li onClick={()=>this.selectMenu("KOLKATA")}>>>KOLKATA</li>
-                <li onClick={()=>this.selectMenu("MUMBAI")}>>>MUMBAI</li>
-                <li onClick={()=>this.selectMenu("PATNA")}>>>PATNA</li>
-                <li onClick={()=>this.selectMenu("INDORE")}>>>INDORE</li>
+                <li onClick={()=>this.selectMenu("BANGALORE")}>BANGALORE</li>
+                <li onClick={()=>this.selectMenu("CHENNAI")}>CHENNAI </li>
+                <li onClick={()=>this.selectMenu("DELHI")}>DELHI</li>
+                <li onClick={()=>this.selectMenu("KOLKATA")}>KOLKATA</li>
+                <li onClick={()=>this.selectMenu("MUMBAI")}>MUMBAI</li>
+                <li onClick={()=>this.selectMenu("PATNA")}>PATNA</li>
+                <li onClick={()=>this.selectMenu("INDORE")}>INDORE</li>
               </ul>)
               :(null)}
           </ul>
