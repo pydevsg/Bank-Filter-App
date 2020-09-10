@@ -12,7 +12,7 @@ class DataTable extends React.Component {
     render() {
       return (
         <div>
-          <div class="header"></div>
+          <div className="header"></div>
           <Table/>     
         </div>
       );

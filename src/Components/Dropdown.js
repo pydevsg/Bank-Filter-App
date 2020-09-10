@@ -6,7 +6,7 @@ class Dropdown extends React.Component {
 
     this.state = {
       selected_menu:"",
-      ct: ["BANGALORE", "CHENNAI", "DELHI", "KOLKATA", "MUMBAI", "PATNA", "INDORE"],
+      ct: ["BANGALORE", "CHENNAI", "DELHI", "HYDERABAD", "INDORE" , "KOLKATA", "MUMBAI", "PATNA", "PUNE"],
       displayMenu: false
 
     };
@@ -68,6 +68,24 @@ class Dropdown extends React.Component {
             <li>
               <a
                 className="active"
+                href="https://vast-shore-74260.herokuapp.com/banks?city=HYDERABAD"
+              >
+                HYDERABAD
+              </a>
+              <button onClick={this.setState({selected_menu:"HYDERABAD"})}>HYDERABAD</button>
+            </li>
+            <li>
+              <a
+                className="active"
+                href="https://vast-shore-74260.herokuapp.com/banks?city=INDORE"
+              >
+                INDORE
+              </a>
+              <button onClick={this.setState({selected_menu:"INDORE"})}>INDORE</button>
+            </li>
+            <li>
+              <a
+                className="active"
                 href="https://vast-shore-74260.herokuapp.com/banks?city=KOLKATA"
               >
                 KOLKATA
@@ -95,11 +113,11 @@ class Dropdown extends React.Component {
             <li>
               <a
                 className="active"
-                href="https://vast-shore-74260.herokuapp.com/banks?city=INDORE"
+                href="https://vast-shore-74260.herokuapp.com/banks?city=PATNA"
               >
-                INDORE
+                PUNE
               </a>
-              <button onClick={this.setState({selected_menu:"INDORE"})}>INDORE</button>
+              <button onClick={this.setState({selected_menu:"PUNE"})}>PUNE</button>
             </li>
           </ul>
         ) : null}

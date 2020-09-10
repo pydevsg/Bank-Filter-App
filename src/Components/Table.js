@@ -35,7 +35,7 @@ class Table extends React.Component {
   }
   //Data update
   componentDidMount() {
-    let ct = ["BANGALORE", "CHENNAI", "DELHI", "KOLKATA", "MUMBAI", "PATNA", "INDORE"];
+    let ct = ["BANGALORE", "CHENNAI", "DELHI", "HYDERABAD", "INDORE" ,"KOLKATA", "MUMBAI", "PATNA" , "PUNE" ];
     let url = "https://vast-shore-74260.herokuapp.com/banks?city=";
       for (let i = 0; i < ct.length; i++) {
         let curl = url + ct[i];
@@ -86,8 +86,8 @@ class Table extends React.Component {
     } else if (!isLoaded) {
       return (
         <div>
-        <div class="loader">Loading...</div>
-        <center><h1 class="wait">Please wait...</h1></center>
+        <div className="loader">Loading...</div>
+        <center><h1 className="wait">Please wait...</h1></center>
         </div>
       );
     } else {
@@ -95,29 +95,31 @@ class Table extends React.Component {
       return (
         <div>
           {/*Drop Down */}
-          <ul class='menu'>
+          <ul className='menu'>
         <li id='main-menu' onClick={this.show_dropdown}>{this.state.selected_menu}
-        <div class="menu-icon">
-            <div class="bar1"></div>
-            <div class="bar2"></div>
-            <div class="bar3"></div>
+        <div className="menu-icon">
+            <div className="bar1"></div>
+            <div className="bar2"></div>
+            <div className="bar3"></div>
         </div>
         </li>
           {this.state.show_menu?
-              (<ul class='dropdown'>
+              (<ul className='dropdown'>
                 <li onClick={()=>this.selectMenu("BANGALORE")}>BANGALORE</li>
                 <li onClick={()=>this.selectMenu("CHENNAI")}>CHENNAI </li>
                 <li onClick={()=>this.selectMenu("DELHI")}>DELHI</li>
+                <li onClick={()=>this.selectMenu("HYDERABAD")}>HYDERABAD</li>
+                <li onClick={()=>this.selectMenu("INDORE")}>INDORE</li>
                 <li onClick={()=>this.selectMenu("KOLKATA")}>KOLKATA</li>
                 <li onClick={()=>this.selectMenu("MUMBAI")}>MUMBAI</li>
                 <li onClick={()=>this.selectMenu("PATNA")}>PATNA</li>
-                <li onClick={()=>this.selectMenu("INDORE")}>INDORE</li>
+                <li onClick={()=>this.selectMenu("PUNE")}>PUNE</li>
               </ul>)
               :(null)}
           </ul>
           {/*DropDown*/}
-          <center><input type="text" placeholder="Search here" class="search" onChange={ e=>this.Search(e) }></input></center>
-          <table class="bd">
+          <center><input type="text" placeholder="Search here" className="search" onChange={ e=>this.Search(e) }></input></center>
+          <table className="bd">
             <thead>
               <tr>
                 <th>Bank IFSC</th>
@@ -147,7 +149,7 @@ class Table extends React.Component {
               }
             </tbody>
             </table>
-            <center><button class="load" onClick={()=> this.load()}>Load More</button></center>
+            <center><button className="load" onClick={()=> this.load()}>Load More</button></center>
           </div>
       );
     }
