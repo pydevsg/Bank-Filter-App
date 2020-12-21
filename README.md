@@ -5,7 +5,6 @@
 
 
 ## Prerequisite
-> [Node.js](https://nodejs.org/en/) 
 
 > [React.js](https://reactjs.org/)
 
