@@ -2,20 +2,22 @@
 
 ## Supported Versions
 
-Use this section to tell people about which versions of your project are
-currently being supported with security updates.
-
 | Version | Supported          |
 | ------- | ------------------ |
-| 5.1.x   | :white_check_mark: |
-| 5.0.x   | :x:                |
-| 4.0.x   | :white_check_mark: |
-| < 4.0   | :x:                |
+| 0.1.x   | :white_check_mark: |
 
 ## Reporting a Vulnerability
 
-Use this section to tell people how to report a vulnerability.
+If you discover a security vulnerability in this project, please report it responsibly.
 
-Tell them where to go, how often they can expect to get an update on a
-reported vulnerability, what to expect if the vulnerability is accepted or
-declined, etc.
+**Please do not open a public issue for security vulnerabilities.**
+
+Instead, please report them by opening a [private security advisory](https://github.com/pydevsg/Bank-Filter-App/security/advisories/new) on this repository.
+
+You should expect an initial response within 72 hours. We will work with you to understand and address the issue before any public disclosure.
+
+## Security Measures
+
+- Dependencies are monitored for known vulnerabilities via Dependabot.
+- Pull requests require review before merging into the `main` branch.
+- The `main` branch is the default and protected branch for this repository.

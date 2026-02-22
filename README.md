@@ -20,15 +20,15 @@
 
 *__Components__*
 
-- [AutoCompleteText.js](https://github.com/pydevsg/Bank-Filter-App/blob/master/src/Components/AutoCompleteText.js) : Search Box eventually acts as a _Search Engine_ to search any details related to banks from cities (currently **BANGALORE**,**CHENNAI**,**DELHI**, **KOLKATA**,**MUMBAI**, **PATNA**, **INDORE**) 
+- [AutoCompleteText.js](https://github.com/pydevsg/Bank-Filter-App/blob/main/src/Components/AutoCompleteText.js) : Search Box eventually acts as a _Search Engine_ to search any details related to banks from cities (currently **BANGALORE**,**CHENNAI**,**DELHI**, **KOLKATA**,**MUMBAI**, **PATNA**, **INDORE**) 
 
-- [DataTable.js](https://github.com/pydevsg/Bank-Filter-App/blob/master/src/Components/DataTable.js) : To fetch all the data from the API in table format.
+- [DataTable.js](https://github.com/pydevsg/Bank-Filter-App/blob/main/src/Components/DataTable.js) : To fetch all the data from the API in table format.
 
-- [DropDown.js](https://github.com/pydevsg/Bank-Filter-App/blob/master/src/Components/Dropdown.js) : To create the Dropdown button in our web application.
+- [DropDown.js](https://github.com/pydevsg/Bank-Filter-App/blob/main/src/Components/Dropdown.js) : To create the Dropdown button in our web application.
 
 ## Acknowledgement
 - :star: my project if you like it.
 - Thanks to all the contributors :clap: :v: 
-- Please add your name in the [Contributors Page](https://github.com/pydevsg/Bank-Filter-App/edit/master/CONTRIBUTORS.md) if you have contributed in this repo :raised_hands:
+- Please add your name in the [Contributors Page](https://github.com/pydevsg/Bank-Filter-App/edit/main/CONTRIBUTORS.md) if you have contributed in this repo :raised_hands:
 
 >  ### Author : Sudipto Ghosh
