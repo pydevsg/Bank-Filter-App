@@ -1,4 +1,4 @@
-# [Bank Filter App](https://bank-filter-app.herokuapp.com/)
+# [Bank Filter App]
 
 > __Web application to search and list all the banks around multiple cities in India__ 
 [![Deploy](https://www.herokucdn.com/deploy/button.png)](https://bank-filter-app.herokuapp.com)
